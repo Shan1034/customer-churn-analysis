@@ -1,0 +1,16 @@
+Factor,Group,Total Customers,Churned Customers,Churn Rate (%)
+Tenure,0-12 months,2186,1037,47.44
+Payment Method,Electronic check,2365,1071,45.29
+Contract,Month-to-month,3875,1655,42.71
+Monthly Charges,65-90,2160,784,36.3
+Monthly Charges,90-120,1739,570,32.78
+Tenure,13-24 months,1024,294,28.71
+Monthly Charges,35-65,1409,326,23.14
+Tenure,25-48 months,1594,325,20.39
+Payment Method,Mailed check,1612,308,19.11
+Payment Method,Bank transfer (automatic),1544,258,16.71
+Payment Method,Credit card (automatic),1522,232,15.24
+Contract,One year,1473,166,11.27
+Monthly Charges,0-35,1735,189,10.89
+Tenure,49-72 months,2239,213,9.51
+Contract,Two year,1695,48,2.83
