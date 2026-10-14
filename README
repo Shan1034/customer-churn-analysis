@@ -1,0 +1,143 @@
+# Customer Churn & Retention Analysis
+
+## Project Overview
+
+Customer churn is a major challenge for subscription-based businesses. This project analyzes customer data to identify churn patterns, understand the factors associated with customer attrition, and uncover opportunities to improve customer retention.
+
+The project uses Python for data cleaning and exploratory analysis, SQL for data analysis, and Power BI for interactive visualization.
+
+## Business Objectives
+
+- Measure the overall customer churn and retention rates.
+- Analyze churn across contract types and customer tenure.
+- Investigate the relationship between monthly charges and churn.
+- Identify payment methods associated with higher churn.
+- Present actionable insights through a Power BI dashboard.
+
+## Tools & Technologies
+
+- **Python:** Data cleaning, transformation, and exploratory data analysis
+- **Pandas:** Data manipulation and aggregation
+- **SQL:** Customer segmentation and churn analysis
+- **Power BI:** Interactive dashboard and KPI visualization
+- **CSV:** Dataset storage and analysis outputs
+
+## Dataset
+
+The project uses the Telco Customer Churn dataset, which contains customer information, subscription details, payment methods, service usage, charges, and churn status.
+
+- **Total customer records:** 7,043
+- **Churned customers:** 1,869
+- **Retained customers:** 5,174
+
+## Key Performance Indicators
+
+| Metric | Result |
+|---|---:|
+| Total Customers | 7,043 |
+| Churned Customers | 1,869 |
+| Retained Customers | 5,174 |
+| Overall Churn Rate | 26.54% |
+| Overall Retention Rate | 73.46% |
+
+## Key Findings
+
+### 1. Contract Type
+
+| Contract | Churn Rate |
+|---|---:|
+| Month-to-month | 42.71% |
+| One year | 11.27% |
+| Two year | 2.83% |
+
+Month-to-month customers have the highest churn rate, while customers on two-year contracts have the lowest.
+
+### 2. Customer Tenure
+
+| Tenure Group | Churn Rate |
+|---|---:|
+| 0–12 months | 47.44% |
+| 13–24 months | 28.71% |
+| 25–48 months | 20.39% |
+| 49–72 months | 9.51% |
+
+Churn is highest among customers in their first year and generally declines as tenure increases.
+
+### 3. Monthly Charges
+
+| Monthly Charges | Churn Rate |
+|---|---:|
+| 0–35 | 10.89% |
+| 35–65 | 23.14% |
+| 65–90 | 36.30% |
+| 90–120 | 32.78% |
+
+Customers in the 65–90 monthly charge group have the highest churn rate among the analyzed charge segments.
+
+### 4. Payment Method
+
+| Payment Method | Churn Rate |
+|---|---:|
+| Electronic check | 45.29% |
+| Mailed check | 19.11% |
+| Bank transfer (automatic) | 16.71% |
+| Credit card (automatic) | 15.24% |
+
+Customers using electronic checks have a substantially higher churn rate than customers using the other payment methods.
+
+## Business Recommendations
+
+Based on the analysis, the following actions could help improve retention:
+
+- **Strengthen early customer engagement:** Introduce onboarding support and proactive follow-ups during the first 12 months.
+- **Encourage longer contracts:** Test loyalty benefits and incentives for customers considering annual or multi-year plans.
+- **Review pricing and value perception:** Investigate whether customers with higher monthly charges feel they receive sufficient value.
+- **Investigate electronic-check churn:** Explore payment friction, customer preferences, and potential differences in customer profiles.
+- **Monitor churn KPIs:** Track churn rate by tenure, contract, payment method, and monthly charge segment over time.
+
+These recommendations are based on observed associations in the dataset; they do not establish that any individual factor directly causes churn.
+
+## Power BI Dashboard
+
+The interactive dashboard includes:
+
+- Total customer, churn, and retention KPIs
+- Churn by contract type
+- Churn by tenure group
+- Churn by payment method
+- Churn by monthly charge group
+- Customer churn distribution
+- Churn by internet service
+- Interactive slicers for customer segmentation
+
+## Project Structure
+
+```text
+customer-churn-analysis/
+├── data/
+│   └── Telco-Customer-Churn.csv
+├── check_data.py
+├── churn_summary.csv
+├── customer_churn_cleaned.csv
+├── customer_churn_analysis.pbix
+└── README.md
+```
+
+## How to Run
+
+1. Clone or download this repository.
+2. Install Python and the Pandas library.
+3. Run the analysis script:
+
+   ```bash
+   python check_data.py
+   ```
+
+4. Open `customer_churn_analysis.pbix` in Power BI Desktop to explore the dashboard.
+
+## Project Outcome
+
+This project demonstrates practical data analytics skills, including data cleaning, exploratory analysis, customer segmentation, KPI calculation, business insight generation, and dashboard development.
+
+
+GitHub: [github.com/Shan1034](https://github.com/Shan1034)
