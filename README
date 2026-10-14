@@ -4,21 +4,22 @@
 
 Customer churn is a major challenge for subscription-based businesses. This project analyzes customer data to identify churn patterns, understand the factors associated with customer attrition, and uncover opportunities to improve customer retention.
 
-The project uses Python for data cleaning and exploratory analysis, SQL for data analysis, and Power BI for interactive visualization.
+The project uses Python for data cleaning and exploratory analysis, SQL (MySQL) for data analysis, and Power BI for interactive visualization.
 
 ## Business Objectives
 
-- Measure the overall customer churn and retention rates.
+- Measure overall customer churn and retention rates.
 - Analyze churn across contract types and customer tenure.
 - Investigate the relationship between monthly charges and churn.
 - Identify payment methods associated with higher churn.
+- Compare churn rates across internet service types.
 - Present actionable insights through a Power BI dashboard.
 
 ## Tools & Technologies
 
 - **Python:** Data cleaning, transformation, and exploratory data analysis
 - **Pandas:** Data manipulation and aggregation
-- **SQL:** Customer segmentation and churn analysis
+- **SQL (MySQL):** Overall churn calculation and churn analysis by contract type, tenure, monthly charges, payment method, and internet service
 - **Power BI:** Interactive dashboard and KPI visualization
 - **CSV:** Dataset storage and analysis outputs
 
@@ -26,9 +27,13 @@ The project uses Python for data cleaning and exploratory analysis, SQL for data
 
 The project uses the Telco Customer Churn dataset, which contains customer information, subscription details, payment methods, service usage, charges, and churn status.
 
+Python analysis results:
+
 - **Total customer records:** 7,043
 - **Churned customers:** 1,869
 - **Retained customers:** 5,174
+
+The SQL analysis uses 7,032 imported records because 11 records with blank `TotalCharges` values were skipped during import.
 
 ## Key Performance Indicators
 
@@ -85,6 +90,16 @@ Customers in the 65–90 monthly charge group have the highest churn rate among 
 
 Customers using electronic checks have a substantially higher churn rate than customers using the other payment methods.
 
+### 5. Internet Service
+
+| Internet Service | Churn Rate |
+|---|---:|
+| Fiber optic | 41.89% |
+| DSL | 19.00% |
+| No internet service | 7.43% |
+
+Customers using fiber-optic internet have a higher observed churn rate than customers using DSL or no internet service. Further analysis could investigate whether pricing, service quality, or customer characteristics contribute to this difference.
+
 ## Business Recommendations
 
 Based on the analysis, the following actions could help improve retention:
@@ -93,9 +108,23 @@ Based on the analysis, the following actions could help improve retention:
 - **Encourage longer contracts:** Test loyalty benefits and incentives for customers considering annual or multi-year plans.
 - **Review pricing and value perception:** Investigate whether customers with higher monthly charges feel they receive sufficient value.
 - **Investigate electronic-check churn:** Explore payment friction, customer preferences, and potential differences in customer profiles.
-- **Monitor churn KPIs:** Track churn rate by tenure, contract, payment method, and monthly charge segment over time.
+- **Review fiber-optic customer experience:** Investigate service quality, pricing, and customer satisfaction among fiber-optic subscribers.
+- **Monitor churn KPIs:** Track churn rate by tenure, contract, payment method, internet service, and monthly charge segment over time.
 
 These recommendations are based on observed associations in the dataset; they do not establish that any individual factor directly causes churn.
+
+## SQL Analysis
+
+SQL queries are available in [`sql/churn_analysis.sql`](sql/churn_analysis.sql).
+
+The queries cover:
+
+- Overall customer count, churned customers, retained customers, and churn rate
+- Churn analysis by contract type
+- Churn analysis by tenure group
+- Churn analysis by monthly charge group
+- Churn analysis by payment method
+- Churn analysis by internet service
 
 ## Power BI Dashboard
 
@@ -116,6 +145,8 @@ The interactive dashboard includes:
 customer-churn-analysis/
 ├── data/
 │   └── Telco-Customer-Churn.csv
+├── sql/
+│   └── churn_analysis.sql
 ├── check_data.py
 ├── churn_summary.csv
 ├── customer_churn_cleaned.csv
@@ -127,17 +158,16 @@ customer-churn-analysis/
 
 1. Clone or download this repository.
 2. Install Python and the Pandas library.
-3. Run the analysis script:
+3. Run the Python analysis script:
 
    ```bash
    python check_data.py
    ```
 
-4. Open `customer_churn_analysis.pbix` in Power BI Desktop to explore the dashboard.
+4. To run the SQL analysis, open `sql/churn_analysis.sql` in MySQL Workbench and execute the queries against the imported `customer_churn_cleaned` table in the `customer_churn` database.
+5. Open `customer_churn_analysis.pbix` in Power BI Desktop to explore the dashboard.
 
 ## Project Outcome
 
-This project demonstrates practical data analytics skills, including data cleaning, exploratory analysis, customer segmentation, KPI calculation, business insight generation, and dashboard development.
+This project demonstrates practical data analytics skills, including data cleaning, exploratory data analysis, SQL querying, customer segmentation, KPI calculation, business insight generation, and interactive dashboard development.
 
-
-GitHub: [github.com/Shan1034](https://github.com/Shan1034)
